@@ -14,14 +14,12 @@
         <img src="img/index.png" alt="Làlá Garden Logo" class="splash-logo">
     </div>
 
-    <!-- Login Container -->
+    <!-- Login Screen -->
     <div class="login-container">
-        <!-- Left Logo Section -->
         <div class="login-left">
             <img src="img/index.png" alt="Làlá Garden Logo" class="login-logo">
         </div>
 
-        <!-- Right Form Section -->
         <div class="login-right">
             <form class="login-form">
                 <label for="username">Username</label>
@@ -36,13 +34,14 @@
     </div>
 
     <script>
-        // After fade out, hide splash completely
+        //animation
         const splash = document.querySelector('.splash');
         splash.addEventListener('animationend', (e) => {
             if (e.animationName === 'fadeOut') {
                 splash.style.display = 'none';
             }
         });
+
     </script>
 </body>
 
