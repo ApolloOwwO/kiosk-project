@@ -4,45 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Làlá Garden - Login</title>
+    <title>Lala Garden Kiosk</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <!-- Splash Screen -->
-    <div class="splash">
-        <img src="img/index.png" alt="Làlá Garden Logo" class="splash-logo">
-    </div>
-
-    <!-- Login Screen -->
-    <div class="login-container">
-        <div class="login-left">
-            <img src="img/index.png" alt="Làlá Garden Logo" class="login-logo">
+    <div class="container">
+        <div class="logo">
+            <!-- Coffee Cup SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                    d="M416 96h-48v64h48c17.67 0 32 14.33 32 32s-14.33 32-32 32h-48v32c0 53.02-42.98 96-96 96h-96c-53.02 0-96-42.98-96-96V96H64v160c0 88.37 71.63 160 160 160h96c88.37 0 160-71.63 160-160s-71.63-160-160-160z" />
+            </svg>
         </div>
-
-        <div class="login-right">
-            <form class="login-form">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username">
-
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password">
-
-                <button type="submit">Login</button>
-            </form>
-        </div>
+        <div class="title">LALA GARDEN</div>
+        <div class="welcome">WELCOME TO LALA GARDEN</div>
+        <div class="subtitle">Ready to order? Tap below to get started.</div>
+        <button class="btn" onclick="location.href='moe.html'">Start Order</button>
     </div>
-
-    <script>
-        //animation
-        const splash = document.querySelector('.splash');
-        splash.addEventListener('animationend', (e) => {
-            if (e.animationName === 'fadeOut') {
-                splash.style.display = 'none';
-            }
-        });
-
-    </script>
 </body>
 
 </html>

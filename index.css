@@ -1,111 +1,66 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-/* splash screen */
-.splash {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #184d34;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: fadeOut 1s ease 2.5s forwards;
-}
-
-.splash-logo {
-  width: 450px;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-}
-
-/* animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* login screen */
-.login-container {
-  display: flex;
-  height: 100vh;
-}
-
-.login-left {
-  flex: 1;
-  background-color: #184d34;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  font-size: 70px;
-  font-weight: bold;
+  background-color: #0d0d0d; /* dark background */
   color: white;
-  font-family: 'Georgia', serif;
-}
-
-.logo span {
-  display: block;
-  font-size: 20px;
-  color: #c9a44f;
-  letter-spacing: 2px;
-  margin-top: 10px;
-}
-
-.login-right {
-  flex: 1;
-  background-color: #557c55;
+  font-family: 'Holtwood One SC', serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-.login-form {
+.container {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  align-items: center;
 }
 
-.login-form label {
-  margin: 10px 0 5px;
+/* Cup Icon */
+.logo {
+  margin-bottom: 15px;
+}
+
+.logo svg {
+  width: 60px;
+  height: auto;
+  fill: #2ecc71; /* green */
+}
+
+.title {
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-family: 'Holtwood One SC', serif;
+}
+
+.welcome {
+  font-size: 18px;
+  margin-top: 8px;
+  font-family: 'Holtwood One SC', serif;
+}
+
+.subtitle {
   font-size: 14px;
-  color: white;
+  margin: 10px 0 20px;
+  color: #ccc;
+  font-family: 'Inter', sans-serif; /* Inter */
 }
 
-.login-form input {
-  padding: 8px;
+.btn {
+  background-color: #2ecc71;
   border: none;
-  border-radius: 3px;
-  margin-bottom: 10px;
-}
-
-.login-form button {
-  padding: 10px;
-  background: #2f6e34;
-  color: white;
-  border: none;
+  padding: 10px 25px;
   border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif; /* Inter */
+  font-weight: 500;
   cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase; /* optional: make it all caps */
+  font-weight: bold; /* optional: make it bold */
 }
 
-.login-form button:hover {
-  background: #265c2a;
-}
-
-.login-logo {
-  width: 300px;
-  max-width: 90%;
+.btn:hover {
+  background-color: #27ae60;
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lala Garden - QR Payment</title>
+    <link rel="stylesheet" href="qr.css">
+</head>
+
+<body>
+    <div class="qr-box">
+        <h3>Complete Your Purchase</h3>
+        <p>Scan the QR code below to pay.</p>
+
+        <canvas id="qrcode"></canvas>
+
+        <p class="total">Total: ₱ 168.00</p>
+
+        <button onclick="goToReceipt()">I’ve Paid</button>
+    </div>
+
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Generate random payment link or order ID
+        const orderID = Math.floor(1000 + Math.random() * 9000);
+
+        // Generate QR code dynamically
+        new QRCode(document.getElementById("qrcode"), {
+            text: "OrderID:" + orderID + " | Pay ₱168",
+            width: 150,
+            height: 150
+        });
+
+        // After payment, redirect to receipt
+        function goToReceipt() {
+            location.href = "receipt.html?payment=QR&order=" + orderID;
+        }
+    </script>
+</body>
+
+</html>

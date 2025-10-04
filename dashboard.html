@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lala Garden Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="order_modal.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- Left Section (Menu) -->
+        <div class="menu">
+            <div class="logo">☕ <span>LALA GARDEN</span></div>
+            <h2 class="section-title">Hot Coffee</h2>
+
+            <div class="cards">
+                <!-- Espresso -->
+                <div class="card" onclick="openModal('Espresso')">
+                    <img src="espresso.jpg" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>A concentrated coffee beverage brewed by forcing hot water under pressure through finely-ground
+                        coffee beans.</p>
+                    <div class="price-row">
+                        <span class="price">₱ 150.00</span>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+
+                <!-- Cappuccino -->
+                <div class="card" onclick="openModal('Cappuccino')">
+                    <img src="cappuccino.jpg" alt="Cappuccino">
+                    <h3>Cappuccino</h3>
+                    <p>An espresso-based coffee drink that originated in Italy, and is traditionally prepared with
+                        steamed milk foam.</p>
+                    <div class="price-row">
+                        <span class="price">₱ 150.00</span>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+
+                <!-- Latte -->
+                <div class="card" onclick="openModal('Latte')">
+                    <img src="latte.jpg" alt="Latte">
+                    <h3>Latte</h3>
+                    <p>A coffee drink made with espresso and steamed milk, much more milk than a cappuccino.</p>
+                    <div class="price-row">
+                        <span class="price">₱ 150.00</span>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section (Cart) -->
+        <div class="cart">
+            <h2>Your Order</h2>
+            <p class="empty">Your cart is empty.<br>Add items from the menu to get started.</p>
+
+            <div class="summary">
+                <div class="row">
+                    <span>Subtotal</span>
+                    <span>₱ 0.00</span>
+                </div>
+                <div class="row">
+                    <span>Tax (12%)</span>
+                    <span>₱ 0.00</span>
+                </div>
+                <div class="row total">
+                    <span>Total</span>
+                    <span>₱ 0.00</span>
+                </div>
+                <button class="checkout">Check Out</button>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h3>Complete Your Purchase</h3>
+                    <span class="close" onclick="closePayment()">&times;</span>
+                </div>
+                <p class="modal-desc">Please choose your payment method.</p>
+
+                <div class="payment-options">
+                    <button class="payment-btn" onclick="goToPayment()">💵 Cash</button>
+                    <button class="payment-btn" onclick="openPayment()"">📱 QR Payment</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id=" itemModal" class="modal-overlay">
+                        <div class="modal-box">
+                            <div class="modal-header">
+                                <h3 id="itemTitle">Cappuccino</h3>
+                                <span class="close" onclick="closeModal()">&times;</span>
+                            </div>
+                            <p class="modal-desc">
+                                An espresso-based coffee drink that originated in Italy, and is traditionally prepared
+                                with steamed milk
+                                foam.
+                            </p>
+
+                            <!-- Milk Options -->
+                            <h4>Milk</h4>
+                            <label><input type="radio" name="milk" value="Whole Milk" checked> Whole Milk</label><br>
+                            <label><input type="radio" name="milk" value="Almond Milk"> Almond Milk</label><br>
+                            <label><input type="radio" name="milk" value="Oat Milk"> Oat Milk</label><br>
+
+                            <!-- Syrup Options -->
+                            <h4>Syrup</h4>
+                            <label><input type="radio" name="syrup" value="None" checked> None</label><br>
+                            <label><input type="radio" name="syrup" value="Caramel"> Caramel</label><br>
+                            <label><input type="radio" name="syrup" value="Vanilla"> Vanilla</label><br>
+
+                            <!-- Quantity -->
+                            <h4>Quantity</h4>
+                            <div class="quantity">
+                                <button onclick="decreaseQty()">−</button>
+                                <span id="qty">1</span>
+                                <button onclick="increaseQty()">+</button>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="modal-actions">
+                                <button class="cancel" onclick="closeModal()">Cancel</button>
+                                <button class="add">Add</button>
+                            </div>
+                        </div>
+                </div>
+
+                <div id="paymentModal" class="payment-modal">
+                    <div class="payment-content">
+                        <h3>Complete Your Purchase</h3>
+                        <p>Please choose your payment method:</p>
+                        <button onclick="payCash()">💵 Cash</button>
+                        <button onclick="payQR()">📱 QR Payment</button>
+                    </div>
+                </div>
+
+                <script>
+                    function openPayment() {
+                        document.getElementById("paymentModal").style.display = "block";
+                    }
+
+                    function payCash() {
+                        window.location.href = "receipt.html?payment=Cash";
+                    }
+
+                    function payQR() {
+                        window.location.href = "qr.html";
+                    }
+                </script>
+
+                <!-- JavaScript File -->
+                <script src="order_modal.js"></script>
+                <script>
+                    function goToPayment() {
+                        // For now, just go straight to receipt with payment method
+                        location.href = "receipt.html?payment=Cash";
+                    }
+                </script>
+</body>
+
+</html>

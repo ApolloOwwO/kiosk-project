@@ -1,0 +1,81 @@
+body {
+  background: #0f1712;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.receipt-box {
+  width: 380px;
+  text-align: center;
+  background: #1d2a1f;
+  border: 2px solid #3c6e47;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.checkmark {
+  font-size: 40px;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.order-number {
+  background: #3c6e47;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.receipt {
+  margin: 15px 0;
+  text-align: left;
+  background: #263a2d;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.receipt h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.receipt .row {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+}
+
+.receipt .row.total {
+  font-weight: bold;
+}
+
+.estimate {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.new-order {
+  background: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.new-order:hover {
+  background: #3c8c3f;
+}
